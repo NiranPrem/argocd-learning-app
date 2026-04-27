@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-learning
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-learning
+  template:
+    metadata:
+      labels:
+        app: nginx-learning
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
